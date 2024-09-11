@@ -36,29 +36,11 @@ def rename_files_in_directory(directory_path):
 def extract_presentation_text(pptx_path, presentation_title):
     presentation = Presentation(pptx_path)
     presentation_data = {
-        # "presentation_title": presentation.core_properties.title or "Untitled Presentation",
         "presentation_title": presentation_title,
         "slides": []
     }
 
     slide_number = 1
-    # for slide in presentation.slides:
-    #     slide_title = None
-    #     slide_texts = []
-    #
-        # for shape in slide.shapes:
-        #     if shape.has_text_frame:    # shape.has_text_frame is True if this shape can contain text
-        #
-        #         if shape.text:    # If shape's text isn't empty
-        #             text = shape.text
-        #             text = text.replace("\n", "REAPLACEMENT")
-        #             text = text.replace("\v", "REAPLACEMENT")
-        #
-        #             if shape == slide.shapes[0]:
-        #                 slide_title = text  # Assuming the first shape contains the title
-        #             else:
-        #                 slide_texts.append(text)
-
     for slide in presentation.slides:
         text_shapes = []
 
